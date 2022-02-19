@@ -1,0 +1,27 @@
+<div class="task-list">
+  <mat-accordion multi>
+    <mat-expansion-panel *ngFor="let task of tasks">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{task.title}}
+          <mat-chip-list class="task-list-item-chips">
+            <mat-chip *ngIf="task?.resolvedAt">Resolved</mat-chip>
+          </mat-chip-list>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div>
+        <small>Due on: {{task.dueDate | date: 'dd.MM.yyyy hh:mm:ss'}}</small><br/>
+        <small *ngIf="task.resolvedAt">Resolved at: {{task.resolvedAt | date: 'dd.MM.yyyy hh:mm:ss'}}</small><br/>
+        <small>Priority: {{task.priority}}</small>
+        <p class="task-list-item-description">{{task.description}}</p>
+      </div>
+
+      <mat-action-row>
+        <button mat-flat-button (click)="resolveTask(task)" *ngIf="!task.resolvedAt">Resolve</button>
+        <a mat-flat-button routerLink="/tasks/update/{{task.id}}">Update</a>
+        <button mat-flat-button (click)="deleteTask(task)">Delete</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

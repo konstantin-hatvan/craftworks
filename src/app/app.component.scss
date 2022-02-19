@@ -1,0 +1,31 @@
+.toolbar {
+  justify-content: space-between;
+
+  &-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &-logo-wrap {
+    display: flex;
+    transform: translateY(-2px);
+  }
+
+  &-nav-ul {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+  }
+
+  &-nav-a {
+    color: #263238;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+
+  &-nav-button {
+    background: #0080BF;
+  }
+}

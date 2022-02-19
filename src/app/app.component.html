@@ -1,0 +1,22 @@
+<mat-toolbar class="toolbar">
+  <div class="toolbar-left">
+    <a routerLink="" class="toolbar-logo-wrap">
+      <img src="/assets/images/craftworks_logo.webp" alt="Craftworks Logo" class="toolbar-logo">
+    </a>
+  </div>
+
+  <div class="toolbar-right">
+    <nav class="toolbar-nav">
+      <ul class="toolbar-nav-ul">
+        <li class="toolbar-nav-li">
+          <a routerLink="/tasks" class="toolbar-nav-a">Task List</a>
+        </li>
+        <li class="toolbar-nav-li">
+          <a routerLink="/tasks/new" mat-flat-button color="accent" class="toolbar-nav-button">Add task</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
